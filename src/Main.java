@@ -13,29 +13,27 @@ public class Main {
     public static void task1(){
         System.out.println("задача 1");
         int salary = 15000;
-        int total = 0;
-        int i = 0;
-        while (total < 2_459_000){
-            total = total + total/100;
-            total = total + salary;
+        float total = 0;
+        float percent = 0.1f;
+        int i = 1;
+        while (total < 2459000){
             i++;
+            total = ( total + salary) * (1+ percent);
+
             System.out.println("Месяц " + i + " сумма накоплений равна " + total + " рублей");
         }
     }
     public static void task2(){
         System.out.println("задача 2");
-        int i = 0;
-        while (i<10){
-            i++;
+        for (int i = 0 ;i < 10 ;i ++){
+
             System.out.printf("%3d",i);
 
     }
         System.out.println();
 
 
-        int j = 11;
-        while (j>1){
-            j = j - 1;
+        for (int j = 10; j > 0 ;j--){
             System.out.printf("%3d",j);
         }
         System.out.println();
@@ -45,12 +43,13 @@ public class Main {
         System.out.println("задача 3");
         int y = 12000000;
         int year = 0;
-        int peopleBorn = 204000;
-        int peopleDied = 96000;
+        int peopleBorn = 17;
+        int peopleDied = 8;
+        int peopleDifference = 9;
         while (year <10){
             year++;
-            int growth = peopleBorn - peopleDied;
-            y = y +growth;
+            y = y + (y * peopleDifference) / 1000;
+
             System.out.println("Год " + year + " численность населения составляет " + y);
         }
 
@@ -61,7 +60,7 @@ public class Main {
         int month = 0;
         int total = 0;
         while (total < 12000000){
-            total = total + total/93;
+            total = total + total/100*7;
             total = total + salary;
             month++;
             System.out.println("Месяц " + month + " накоплений " + total);
@@ -73,7 +72,7 @@ public class Main {
         int month = 0;
         int total = 0;
         while (total < 12000000) {
-            total = total + total / 93;
+            total = total + total /100*7;
             total = total + salary;
             month++;
             if (month % 6 == 0){
@@ -87,7 +86,7 @@ public class Main {
         int month = 0;
         int total = 0;
         while (month < 108) {
-            total = total + total / 93;
+            total = total + total /100*7;
             total = total + salary;
             month++;
             if (month % 6 == 0){
@@ -110,8 +109,10 @@ public class Main {
         int m = l - 200;
         int j = l + 100;
         while (m<j){
-            System.out.println(m);
-            m = m +79;
+            m++;
+            if (m % 79 == 0) {
+                System.out.println(m);
+            }
         }
 
     }
